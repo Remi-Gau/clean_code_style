@@ -53,7 +53,9 @@ function [IJKneighbors, interpWeighs] = idw3dInterp(fiberSet, volume)
             for k = 1:3
                 for l = 1:3
                     for m = 1:3
-                        slice_points_RAS(k, :, m + (l - 1) * 3) = [volume.xRASidx(qx(l)) volume.yRASidx(qy(m)) volume.SliceRASidx(qz(k))];
+                        slice_points_RAS(k, :, m + (l - 1) * 3) = [volume.xRASidx(qx(l)), ...
+                                                                   volume.yRASidx(qy(m)), ...
+                                                                   volume.SliceRASidx(qz(k))];
                         slice_points_ijk(k, :, m + (l - 1) * 3) = [qx(l) qy(m) qz(k)];
                     end
                 end
@@ -81,7 +83,9 @@ function [IJKneighbors, interpWeighs] = idw3dInterp(fiberSet, volume)
             weighs = weighs ./ totweigh;
 
             for m = 1:8
-                IJKneighbors(i).mat(j, :, m) = slice_points_ijk(normHolder_sorted(m, 2), :, normHolder_sorted(m, 3));
+                IJKneighbors(i).mat(j, :, m) = slice_points_ijk(normHolder_sorted(m, 2), ...
+                                                                :, ...
+                                                                normHolder_sorted(m, 3));
                 interpWeighs(i).mat(j, m) = weighs(m);
             end
 

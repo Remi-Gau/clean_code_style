@@ -145,7 +145,10 @@ plot.direction = [1 0 0; 0 1 0; 0 0 1];
 
 for i = 1:mt_on.size(1)
     for j = 1:mt_on.size(2)
-        [outPoint] = ChangePtsCorSis(plot.origin, plot.spacing, plot.direction, [i j plot.slice], 1);
+        [outPoint] = ChangePtsCorSis(plot.origin, ...
+                                     plot.spacing, ...
+                                     plot.direction, ...
+                                     [i j plot.slice], 1);
         plot.x(i, j) = outPoint(1);
         plot.y(i, j) = outPoint(2);
         plot.z(i, j) = outPoint(3);
@@ -216,7 +219,11 @@ trcks_fa = trcks;
 
 for ii = 1:length(trcks)
     for jj = 1:length(trcks(ii).matrix)
-        trcks(ii).matrix(jj, :) = trcks(ii).matrix(jj, :) * transform(1:3, 1:3) + mt_on.origin - transform(1:3, 4)';
+        trcks(ii).matrix(jj, :) = ...
+          trcks(ii).matrix(jj, :) * ...
+          transform(1:3, 1:3) + ...
+          mt_on.origin - ...
+          transform(1:3, 4)';
     end
 end
 
@@ -242,7 +249,11 @@ plot2.direction = [1 0 0; 0 1 0; 0 0 1];
 
 for i = 1:fa.size(1)
     for j = 1:fa.size(2)
-        [outPoint] = ChangePtsCorSis(plot2.origin, plot2.spacing, plot2.direction, [i j plot.slice], 1);
+        [outPoint] = ChangePtsCorSis(plot2.origin, ...
+                                     plot2.spacing, ...
+                                     plot2.direction, ...
+                                     [i j plot.slice], ...
+                                     1);
         plot2.x(i, j) = outPoint(1);
         plot2.y(i, j) = outPoint(2);
         plot2.z(i, j) = outPoint(3);

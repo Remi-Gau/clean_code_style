@@ -32,7 +32,7 @@
 %
 % Author & Version
 % ================
-% S. Hölz, TU-Berlin, seppel_mit_ppATweb.de
+% S. Hoelz, TU-Berlin, seppel_mit_ppATweb.de
 % V 1.0, 16.4.2007
 % Created using Matlab 7.0.4 (SP2)
 %
@@ -55,7 +55,7 @@
 
 % License
 % =======
-% Copyright (c) 2009, Sebastian Hölz
+% Copyright (c) 2009, Sebastian Hoelz
 % All rights reserved.
 %
 % Redistribution and use in source and binary forms, with or without
